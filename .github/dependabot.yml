@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Enable version updates for pip (Python)
+  - package-ecosystem: "pip"
+    directory: "/" # Location of your requirements.txt or similar
+    schedule:
+      interval: "daily" # How often to check for updates
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Enable version updates for Docker
+  - package-ecosystem: "docker"
+    directory: "/" # Location of your Dockerfile
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
